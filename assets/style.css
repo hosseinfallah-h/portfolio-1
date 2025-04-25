@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: white;
+    color: #1a1a1a;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(0, 180, 216, 0.1) 100%);
+}
+
+.skill-card {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 0 20px 30px rgba(0, 180, 216, 0.2);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 20px 30px rgba(0, 180, 216, 0.3);
+}
+
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-delay-1 {
+    animation-delay: 1s;
+}
+
+.floating-delay-2 {
+    animation-delay: 2s;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #00B4D8, #0077B6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Cube styles */
+.cube-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: grab;
+}
+
+.cube-container:active {
+    cursor: grabbing;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #00B4D8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #00B4D8;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 20px rgba(0, 180, 216, 0.2);
+}
+
+.front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes autoRotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contact-input {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.contact-input:focus {
+    border-bottom-color: #00B4D8;
+    outline: none;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00B4D8;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Language switcher */
+.language-switcher {
+    position: relative;
+    margin-left: 20px;
+}
+
+.language-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #4B5563;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.language-btn:hover {
+    color: #00B4D8;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 120px;
+    z-index: 100;
+    display: none;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-option {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.language-option:hover {
+    background-color: #F3F4F6;
+    color: #00B4D8;
+}
+
+.language-option img {
+    width: 20px;
+    height: 15px;
+    margin-left: 8px;
+}
+
+body.rtl .language-option img {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* Developer name in navbar */
+.developer-name.en {
+    display: block;
+}
+
+.developer-name.fa {
+    display: none;
+}
+
+body.rtl .developer-name.en {
+    display: none;
+}
+
+body.rtl .developer-name.fa {
+    display: block;
+}
